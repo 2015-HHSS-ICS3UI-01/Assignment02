@@ -37,13 +37,15 @@ public class ProgrammingExercise1 {
         new Thing(kw, 1, 10);
         new Thing(kw, 1, 11);
         
-        //make robot walk forward and pick up things
-        while(karel.getAvenue()!=12)
+        // make robot stop when he reaches avenue 12
+        while(karel.getAvenue() < 12)
         {
+            // make robot pick up things untill his backpack is full
             if(karel.canPickThing() && karel.countThingsInBackpack() < 7)
             {
                 karel.pickThing();
                 karel.move();
+            // make robot move if he cannot pick up anything
             }else
             {
                 karel.move();

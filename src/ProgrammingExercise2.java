@@ -28,6 +28,7 @@ public class ProgrammingExercise2 {
         
         //make finish line using thing
         new Thing (kw, 2, 9);
+        
         //make walls within city
         new Wall (kw, 2, 1, Direction.SOUTH);
         new Wall (kw, 2, 2, Direction.SOUTH);
@@ -43,12 +44,14 @@ public class ProgrammingExercise2 {
         new Wall (kw, 2, 4, Direction.EAST);
         new Wall (kw, 2, 7, Direction.EAST);
         
-        //make robot hurdle over walls and make it to the finish line
+        // make robot hurdle over walls and make it to the finish line
         while(!karel.canPickThing())
         {
+            // make robot move if there is nothing infront of him
             if(karel.frontIsClear())
             {
                 karel.move();
+            // make robot hurdle of the walls if they are in the way
             }else
             {
                 karel.turnLeft();
@@ -63,7 +66,7 @@ public class ProgrammingExercise2 {
                 karel.move();
                 karel.turnLeft();
             }
-                
+
         }
     }
 }
