@@ -38,11 +38,11 @@ public class A2Q1 {
         new Thing(kw, 1,11);
         
         //make karel pick up 7 things then walk past the last 3
-        if(karel.getAvenue() <= 8) { 
+        while (karel.getAvenue() <= 7) { 
         karel.move();
         karel.pickThing();
         }
-        else if(karel.getAvenue() == 9 || karel.getAvenue() == 10 || karel.getAvenue() == 11) {
+        while (karel.getAvenue() == 8 || karel.getAvenue() == 9 || karel.getAvenue() == 10 || karel.getAvenue() == 11) {
         karel.move();
         }
         
