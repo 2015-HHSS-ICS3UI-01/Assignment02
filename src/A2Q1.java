@@ -46,4 +46,5 @@ public class A2Q1 {
         karel.move();
         }
         
+    }
 }
