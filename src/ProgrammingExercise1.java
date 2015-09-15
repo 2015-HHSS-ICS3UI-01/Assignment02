@@ -38,7 +38,7 @@ public class ProgrammingExercise1 {
         new Thing(kw, 1, 11);
         
         //make robot walk forward and pick up things
-        while(karel.frontIsClear() == true)
+        while(karel.getAvenue()!=12)
         {
             if(karel.canPickThing() && karel.countThingsInBackpack() < 7)
             {
