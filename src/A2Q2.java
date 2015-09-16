@@ -46,12 +46,17 @@ public class A2Q2 {
         new Thing(kw, 3,9);
         
         //make karel 'jump the hurdles'
-        while (karel.frontIsClear()) {
+        while (true) 
+            if (karel.frontIsClear()) {
             karel.move();
-         if (karel.canPickThing()) {
-             karel.pickThing();
-         } 
+        } else if (karel.frontIsClear() == false) {
+            karel.turnLeft();
+            
         }
+                
+            
+         
+         
         
         
     }
