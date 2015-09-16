@@ -47,17 +47,24 @@ public class A2Q2 {
         
         //make karel 'jump the hurdles'
         while (true) 
-            if (karel.frontIsClear()) {
+            if (karel.canPickThing()) {
+            break; 
+        } else if (karel.frontIsClear()) {
             karel.move();
         } else if (karel.frontIsClear() == false) {
             karel.turnLeft();
-            
-        }
-                
-            
-         
-         
-        
+            karel.move();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.move();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.move();
+            karel.turnLeft();
+        } 
+    
         
     }
 }
