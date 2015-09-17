@@ -80,8 +80,8 @@ public class A2Q5 {
         new Wall(kw, 8,7, Direction.SOUTH);
         new Wall(kw, 9,2, Direction.EAST);
         new Wall(kw, 9,2, Direction.SOUTH);
-        //make things
         
+        //make things
         new Thing(kw, 0,1);
         new Thing(kw, 1,0);
         new Thing(kw, 2,0);
@@ -133,9 +133,27 @@ public class A2Q5 {
         
         //make karel shovel snow
         while (true)
-            if (karel.canPickThing()) {
+            if (karel.canPickThing() && karel.getAvenue() != 2) {
                 karel.pickThing();
-            } else if(karel.frontIsClear)
+            } else if (karel.getAvenue() == 2 && karel.countThingsInBackpack() > 0) {
+                karel.putThing(); 
+            } else if (karel.getAvenue() == 2 && karel.frontIsClear() == false && karel.getDirection() == Direction.SOUTH) {
+                break;
+            } else if(karel.frontIsClear()) {
+                karel.move();
+                karel.turnLeft();
+            } else if (karel.frontIsClear() == false) {
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.turnLeft();
+            } 
+        
+        while (true) 
+            if (tina.canPickThing()) {
+                tina.pickThing();
+            }else if (tina.frontIsClear()) {
+                tina.move();
+            }
         
     }
     
