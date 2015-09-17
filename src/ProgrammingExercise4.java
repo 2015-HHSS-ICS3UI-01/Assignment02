@@ -23,7 +23,7 @@ public class ProgrammingExercise4 {
         City kw = new City();
         
         // make robot to live in the city
-        Robot karel = new Robot(kw, 5, 0, Direction.WEST);
+        Robot karel = new Robot(kw, 0, 0, Direction.EAST);
         
         // make walls within the city
         new Wall(kw, 2, 2, Direction.NORTH);
@@ -51,33 +51,28 @@ public class ProgrammingExercise4 {
         new Wall(kw, 4, 4, Direction.SOUTH);
         new Wall(kw, 4, 4, Direction.WEST);
         
-        while(karel.getAvenue() == 0 && karel.getStreet() != 0 && karel.getStreet() != 3)
-        {
-            if(karel.getDirection() == Direction.WEST)
-            {
-                karel.turnLeft();
-                karel.turnLeft();
-                karel.turnLeft();
-            }else
-            {
-                karel.move();
-            }
-        }
         
-        while(karel.getStreet() == 3 && karel.getAvenue() != 1 && karel.getAvenue() != 5)
-        {
-            if(karel.getDirection() == Direction.NORTH)
-            {
-                karel.turnLeft();
-                karel.turnLeft();
-                karel.turnLeft();
-            }else
-            {
-                karel.move();
-            }
+        while(karel.frontIsClear())
+        {   
+            karel.move();
+            karel.move();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.move();
+            karel.turnLeft();
+            karel.move();
+            karel.turnLeft();
+            karel.move();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.move();
+            karel.move();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.turnLeft();
         }
-                
-                
-            
+     
     }
 }
