@@ -36,12 +36,31 @@ public class Programming_Exercises {
         new Thing (kw,1,10);
         new Thing (kw,1,11);
         
-            if (matt.countThingsInBackpack() <=7);
-            matt.move();
+        matt.move();
+        
+        while(matt.countThingsInBackpack()<=6){
             matt.pickThing();
-            
-        
-        
+            matt.move();
+        }while(matt.frontIsClear()){
+            matt.move();
+            if(matt.getAvenue()==12)
+            {
+                break;
+            }
         }
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+      
+        }
+        
     
 }
