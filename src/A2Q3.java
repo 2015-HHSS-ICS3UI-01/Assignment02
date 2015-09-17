@@ -8,7 +8,6 @@ import becker.robots.Robot;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Peter
@@ -21,25 +20,27 @@ public class A2Q3 {
     public static void main(String[] args) {
         //make city
         City kw = new City();
-        
+
         //make robot
-        Robot karel = new Robot(kw, 5,3, Direction.NORTH);
-        
-        while (true)
-            if (karel.getStreet() > 0) {
-            karel.move();
-        } else if (karel.getStreet() == 0) {
-            break;
-        } 
-        
+        Robot karel = new Robot(kw, 5, 3, Direction.EAST);
+
+        while (true) {
+            if (karel.getDirection() != Direction.NORTH) {
+                karel.turnLeft();
+            } else if (karel.getStreet() > 0) {
+                karel.move();
+            } else if (karel.getStreet() == 0) {
+                break;
+            }
+        }
         karel.turnLeft();
-                
-        while (true)
+
+        while (true) {
             if (karel.getAvenue() > 0) {
                 karel.move();
             } else if (karel.getAvenue() == 0) {
                 break;
             }
+        }
     }
-    
 }
