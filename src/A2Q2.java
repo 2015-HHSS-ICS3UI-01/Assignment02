@@ -48,20 +48,28 @@ public class A2Q2 {
             karel.move();
         }else{
             karel.turnLeft();
-            karel.move();
+            karel.move();            
         }    
-        if(karel.getStreet() != 2 )
+        while(karel.getDirection() !=  Direction.EAST)
         {
             karel.turnLeft();
-            karel.turnLeft();
-            karel.turnLeft();
+        }
+        
+        if(karel.getStreet() != 2)
+        {
             karel.move();
+        }
+        
+        while(karel.getDirection() != Direction.SOUTH && karel.getStreet() == 1)
+        {
             karel.turnLeft();
-            karel.turnLeft();
-            karel.turnLeft();
+        }    
+        if(karel.getDirection() == Direction.SOUTH)
+        {
             karel.move();
             karel.turnLeft();
         }
+        
         if(karel.canPickThing())
         {
             break;
