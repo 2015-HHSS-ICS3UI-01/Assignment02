@@ -46,41 +46,27 @@ public class A2Q2 {
         //Make Thing
         new Thing(A2Q2, 4, 9);
         
-        do{
-        karel.turnLeft();
-        karel.move();
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.move();
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.move();
-        karel.turnLeft();
-        }
-        while( !karel.frontIsClear() );
-        
-        while( karel.frontIsClear() ){
-            karel.move();
-        }
-        
+        while( true ){
             
         
-        
-        
-        
-        
-                
-                
-                
-
-        
-        
-        
-        
-        
-        
-        
-    }
+        if( !karel.frontIsClear() ){
+        karel.turnLeft();
+        karel.move();
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.move();
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.move();
+        karel.turnLeft();
+        }else if( karel.frontIsClear()){
+            karel.move();
+        }
+        if( karel.canPickThing() ){
+            break;
+        }
+        }
+        }
 }
