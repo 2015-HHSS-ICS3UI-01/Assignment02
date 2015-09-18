@@ -24,7 +24,7 @@ public class A2Q3 {
         City kw = new City(); 
                 
         //make new robot
-        Robot karel = new Robot (kw, 1, 18, Direction.WEST);
+        Robot karel = new Robot (kw, 8, 18, Direction.WEST);
         
         if (karel.getStreet()>0);
         {
