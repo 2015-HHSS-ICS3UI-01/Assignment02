@@ -24,7 +24,7 @@ public class A2Q3 {
         City kw = new City(); 
                 
         //make new robot
-        Robot karel = new Robot (kw, 0, 18, Direction.WEST);
+        Robot karel = new Robot (kw, 1, 18, Direction.WEST);
         
         if (karel.getStreet()>0);
         {
@@ -33,29 +33,15 @@ public class A2Q3 {
         {
             karel.turnLeft();
         }
-        if (karel.getDirection()==Direction.NORTH);
-        {while (karel.getStreet()!=0)
+        
+        while (karel.getStreet()!=0)
             karel.move();
-        }
         
         } 
         
         if (karel.getAvenue()>0);
         {
-        karel.turnLeft();
-        if (karel.getDirection()!=Direction.WEST)
-        {
             karel.turnLeft();
-        }   
-        if (karel.getDirection()!=Direction.WEST)
-        {
-            karel.turnLeft();
-        }   
-        if (karel.getDirection()!=Direction.WEST)
-        {
-            karel.turnLeft();
-        }   
-        
         }
         
         while (karel.getAvenue()!=0)

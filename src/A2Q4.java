@@ -53,7 +53,7 @@ public class A2Q4 {
         new Wall(castle, 3, 2, Direction.SOUTH);
         new Wall(castle, 3, 2, Direction.WEST);
         
-        while(guard.frontIsClear()){
+        while(true){
         guard.move();
         guard.move();
         guard.turnLeft();
