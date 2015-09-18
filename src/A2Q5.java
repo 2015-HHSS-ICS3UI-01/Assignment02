@@ -148,12 +148,16 @@ public class A2Q5 {
                 karel.turnLeft();
             } 
         
+        //make tina shovel snow
         while (true) 
             if (tina.canPickThing()) {
                 tina.pickThing();
             }else if (tina.frontIsClear()) {
                 tina.move();
+            } else if (tina.frontIsClear() == false) {
+                tina.putThing();
             }
+        
         
     }
     
