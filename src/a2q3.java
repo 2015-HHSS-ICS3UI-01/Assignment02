@@ -18,12 +18,13 @@ public class a2q3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //make ne city 
-         City a2q3= new City();
-         Robot lali= new Robot(a2q3,20,16,Direction.EAST);
-         
-         
+       City a2q3=new City();
+       Robot lali= new Robot(a2q3,1,2,Direction.EAST);
+       
+      while(lali.getDirection() != Direction.NORTH){
+          lali.turnLeft();
          
        
+      
     }
 }
