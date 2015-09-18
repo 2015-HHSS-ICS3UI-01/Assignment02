@@ -14,5 +14,18 @@ public class A2Q3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+if(karel.getStreet() != 2 )
+        {
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.move();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.move();
+            karel.turnLeft();
+        }
+    
     }
 }

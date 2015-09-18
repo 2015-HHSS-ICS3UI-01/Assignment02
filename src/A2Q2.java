@@ -60,7 +60,7 @@ public class A2Q2 {
             karel.move();
         }
         
-        while(karel.getDirection() != Direction.SOUTH && karel.getStreet() == 1)
+        while(karel.getDirection() != Direction.SOUTH && karel.getStreet() == 2)
         {
             karel.turnLeft();
         }    
