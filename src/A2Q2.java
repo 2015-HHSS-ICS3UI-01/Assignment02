@@ -41,39 +41,31 @@ public class A2Q2 {
     
         Robot karel = new Robot(kw, 2, 2, Direction.EAST);
     
-        while(karel.getStreet() == 2)
-        {
-            if(karel.frontIsClear())
-        {
-            karel.move();
-        }else{
-            karel.turnLeft();
-            karel.move();            
-        }    
-        while(karel.getDirection() !=  Direction.EAST)
-        {
-            karel.turnLeft();
-        }
+      while(karel.getStreet() == 2)
+      {
+          if(karel.frontIsClear())
+          {
+              karel.move();
+          }               
+          else if(!karel.frontIsClear() )
+          {
+              karel.turnLeft();
+              karel.move();
+              karel.turnLeft();
+              karel.turnLeft();
+              karel.turnLeft();
+              karel.move();
+              karel.turnLeft();
+              karel.turnLeft();
+              karel.turnLeft();
+              karel.move();
+              karel.turnLeft();
+          }
         
-        if(karel.getStreet() != 2)
-        {
-            karel.move();
-        }
-        
-        while(karel.getDirection() != Direction.SOUTH && karel.getStreet() == 2)
-        {
-            karel.turnLeft();
-        }    
-        if(karel.getDirection() == Direction.SOUTH)
-        {
-            karel.move();
-            karel.turnLeft();
-        }
-        
-        if(karel.canPickThing())
-        {
-            break;
-        }           
+          if(karel.canPickThing())
+          {
+              break;
+          }           
       }            
    }
 }
