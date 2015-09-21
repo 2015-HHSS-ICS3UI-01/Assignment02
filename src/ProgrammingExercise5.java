@@ -138,9 +138,8 @@ public class ProgrammingExercise5 {
             karel.turnLeft();
                         
             // make karel check if his front is clear and move 
-            // howeve only allow karen to move provided he is not 
-            // going north, to ensure he is moving toward
-            // street 9
+            // however only allow karel to move provided he is not 
+            // going north, to ensure he is moving toward street 9
             if(karel.frontIsClear() )
             {
                 karel.move();
@@ -153,7 +152,7 @@ public class ProgrammingExercise5 {
                 karel.turnLeft();
             }
              
-            // make karel drop the snow in his back pack if he in on the sidewalk (avenue 2), 
+            // make karel drop the snow in his back pack if he is on the sidewalk (avenue 2), 
             // otherwise if on driveway, then pick up the snow and put it in his backpack
             if(karel.getAvenue() == 2 && karel.countThingsInBackpack() > 0)
             {

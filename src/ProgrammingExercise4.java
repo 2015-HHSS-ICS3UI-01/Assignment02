@@ -73,7 +73,7 @@ public class ProgrammingExercise4 {
             karel.move();
             karel.move();
             
-            // Turn the guard to face parallel to nexr wall
+            // Turn the guard to face parallel to next wall
             karel.turnLeft();
             karel.turnLeft();
             karel.turnLeft();
