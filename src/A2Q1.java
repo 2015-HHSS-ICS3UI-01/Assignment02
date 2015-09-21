@@ -42,6 +42,7 @@ public class A2Q1 {
         karel.move();
         karel.pickThing();
         }
+        
         //make karel walk past the last 3 then stop
         while (karel.getAvenue() == 8 || karel.getAvenue() == 9 || karel.getAvenue() == 10 || karel.getAvenue() == 11) {
         karel.move();
