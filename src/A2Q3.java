@@ -24,6 +24,7 @@ public class A2Q3 {
         //make robot
         Robot karel = new Robot(kw, 5, 3, Direction.EAST);
 
+        //make karel find street 0
         while (true) {
             if (karel.getDirection() != Direction.NORTH) {
                 karel.turnLeft();
@@ -35,6 +36,7 @@ public class A2Q3 {
         }
         karel.turnLeft();
 
+        //make karel find avenue 0
         while (true) {
             if (karel.getAvenue() > 0) {
                 karel.move();

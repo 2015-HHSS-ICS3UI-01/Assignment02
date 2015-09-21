@@ -52,6 +52,7 @@ public class A2Q4 {
         new Wall(kw, 3,3, Direction.EAST);
         new Wall(kw, 3,3, Direction.SOUTH);
         
+        //make karel go around the castle
         while (karel.frontIsClear()) {
             karel.move();
             karel.move();
