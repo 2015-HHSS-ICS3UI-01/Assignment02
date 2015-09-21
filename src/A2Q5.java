@@ -131,15 +131,10 @@ public class A2Q5 {
         new Thing(kw, 5, 7);
         new Thing(kw, 7, 7);
         
-        karel.turnLeft();
-        if(karel.frontIsClear()){
-            karel.move();
-        }
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.turnLeft();
         karel.move();
+        
         karel.turnLeft();
+        
         if(karel.frontIsClear()){
             karel.move();
         }
