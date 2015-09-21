@@ -20,8 +20,10 @@ public class A2Q2 {
      */
     public static void main(String[] args) {
 
+        //Make city for Robot to live in
         City kw = new City();
 
+        //Make new Walls
         new Wall(kw, 2, 2, Direction.SOUTH);
         new Wall(kw, 2, 2, Direction.EAST);
         new Wall(kw, 2, 3, Direction.SOUTH);
@@ -35,11 +37,14 @@ public class A2Q2 {
         new Wall(kw, 2, 8, Direction.EAST);
         new Wall(kw, 2, 9, Direction.SOUTH);
         new Wall(kw, 2, 10, Direction.SOUTH);
-
+        
+        //Use Thing as Finish line
         new Thing(kw, 2, 10);
 
+        //Robot that does the race
         Robot karel = new Robot(kw, 2, 2, Direction.EAST);
 
+        
         while (karel.getStreet() == 2) {
             if (karel.frontIsClear()) {
                 karel.move();

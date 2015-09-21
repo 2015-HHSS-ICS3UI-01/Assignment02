@@ -16,8 +16,6 @@ import becker.robots.Wall;
  */
 public class A2Q5 {
 
-    private static IPredicate aWall;
-
     /**
      * @param args the command line arguments
      */
@@ -126,9 +124,10 @@ public class A2Q5 {
         new Thing(kw, 9, 7);
 
         Robot karel = new Robot(kw, 0, 3, Direction.SOUTH);
+        Robot tina = new Robot(kw, 0, 3, Direction.SOUTH);
 
         while (karel.frontIsClear()) {
-            while (karel.isBesideThing(aWall)) {
+            while (karel.isBesideThing(IPredicate.aWall)) {
                 if (karel.canPickThing()) {
                     karel.pickThing();
                 }
@@ -140,14 +139,23 @@ public class A2Q5 {
                     karel.turnLeft();
                 }
             }
-            if (!karel.isBesideThing(aWall)) {
-                if (karel.canPickThing()) {
-                    karel.pickThing();
-                }
+            if (!karel.isBesideThing(IPredicate.aWall)) {
                 karel.turnLeft();
                 karel.move();
             }
         }
         karel.putThing();
+
+        while (tina.frontIsClear()) {
+            tina.move();
+
+            if (tina.canPickThing()) {
+                tina.pickThing();
+            }
+            if (!tina.frontIsClear()) {
+                tina.putThing();
+            }
+        }
+
     }
 }
