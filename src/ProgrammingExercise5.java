@@ -85,7 +85,6 @@ public class ProgrammingExercise5 {
         new Wall(kw, 9, 2, Direction.SOUTH);
         
         // make things for the robots to pick up
-        
         new Thing(kw, 1, 2); 
         new Thing(kw, 2, 2);
         new Thing(kw, 4, 2);
@@ -102,7 +101,6 @@ public class ProgrammingExercise5 {
         new Thing(kw, 8, 4);
         new Thing(kw, 8, 6);
         new Thing(kw, 7, 7);
-        
         new Thing(kw, 0, 3);
         new Thing(kw, 0, 4);
         new Thing(kw, 0, 6);
@@ -131,47 +129,64 @@ public class ProgrammingExercise5 {
         new Thing(kw, 9, 0);
         new Thing(kw, 9, 1);
         
-        while(true)
+        // move karel from street 0 to street 9, clean each street of snow
+        while(karel.getStreet() != 9)
         {
+            // Turn left to allow Karel to examine the street or avenue 
+            // to his left, if it's clear then move in that direction
+            // if not then move forward and repeat
             karel.turnLeft();
-            if(karel.frontIsClear())
-        }
-        
-        
-        
-        
-        
-        while(karel.getAvenue() == 2)
-        {
-            if(karel.getStreet() == 1 || karel.getStreet() == 4 || karel.getStreet() == 7)
+                        
+            // make karel check if his front is clear and move 
+            // howeve only allow karen to move provided he is not 
+            // going north, to ensure he is moving toward
+            // street 9
+            if(karel.frontIsClear() )
             {
-                if(karel.getDirection() == Direction.SOUTH)
+                karel.move();
+                
+            // if not, make karel turn left three times to face forward 
+            // and move in that direction if clear
+            }  else
+            {
+                karel.turnLeft();
+                karel.turnLeft();
+            }
+             
+            // make karel drop the snow in his back pack if he in on the sidewalk (avenue 2), 
+            // otherwise if on driveway, then pick up the snow and put it in his backpack
+            if(karel.getAvenue() == 2 && karel.countThingsInBackpack() > 0)
+            {
+                // make karel put down things if he has things
+                while(karel.countThingsInBackpack() > 0)
                 {
-                    karel.turnLeft();
-                    karel.move();
+                    karel.putThing();
                 }
-            }else
+            // if not, then on driveway, make karel pick things
+            }else if(karel.getAvenue() != 2 && karel.canPickThing() == true)
             {
-                karel.move();
+                karel.pickThing();
             }
         }
         
-        while(karel.getAvenue() != 2)
+        // make tina do something if she is not on street 9
+        while(tina.getStreet() != 9)
         {
-            if(karel.frontIsClear())
+            // make tina pick up things along avenue 2
+            if(tina.canPickThing())
             {
-                karel.move();
+            tina.pickThing();
+            //if not make tina move forward
             }else
             {
-                karel.turnLeft();
-                karel.turnLeft();
-                karel.turnLeft();
+                tina.move();
             }
         }
         
-        while(karel.getAvenue() != 2 || karel.getStreet() == 2 || karel.getStreet() == 4 || karel.getStreet() == 8)
+        // if tina is on street 9 make her put down things
+        while(tina.getStreet() == 9 && tina.countThingsInBackpack() > 0)
         {
-            karel.turnLeft();
+            tina.putThing();
         }
    }
 }

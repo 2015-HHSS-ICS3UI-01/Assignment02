@@ -51,9 +51,12 @@ public class ProgrammingExercise4 {
         new Wall(kw, 4, 4, Direction.SOUTH);
         new Wall(kw, 4, 4, Direction.WEST);
         
-        
-        while(karel.frontIsClear())
+        // make robot move along each side of the castle in a loop
+        while( karel.frontIsClear() )
         {   
+            // The outer edge of castle forms a pattern of movements hence we can follow the wall
+            // using a repeated pattern and apply the same pattern for each side.
+            // Move guard along outer perimeter of one side of the castle.
             karel.move();
             karel.move();
             karel.turnLeft();
@@ -69,10 +72,11 @@ public class ProgrammingExercise4 {
             karel.turnLeft();
             karel.move();
             karel.move();
+            
+            // Turn the guard to face parallel to nexr wall
             karel.turnLeft();
             karel.turnLeft();
             karel.turnLeft();
         }
-     
     }
 }

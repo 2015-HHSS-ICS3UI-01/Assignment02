@@ -22,7 +22,7 @@ public class ProgrammingExercise1 {
         // make city for robot to live in
         City kw = new City();
         
-        // make robot to live in city
+        // make robot to live in city, and position him at (1,1) facing East
         Robot karel = new Robot (kw, 1, 1, Direction.EAST);
         
         //make things for robot to pick up
@@ -45,12 +45,12 @@ public class ProgrammingExercise1 {
             {
                 karel.pickThing();
                 karel.move();
+                
             // make robot move if he cannot pick up anything
             }else
             {
                 karel.move();
             }
-        }
-        
+        } 
     }
 }

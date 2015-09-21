@@ -44,29 +44,42 @@ public class ProgrammingExercise2 {
         new Wall (kw, 2, 4, Direction.EAST);
         new Wall (kw, 2, 7, Direction.EAST);
         
-        // make robot hurdle over walls and make it to the finish line
+        // make karel run the race, jump any hurdles and stop at the finish line
         while(!karel.canPickThing())
         {
-            // make robot move if there is nothing infront of him
+            // make robot move directly east if there is nothing infront of him
             if(karel.frontIsClear())
             {
                 karel.move();
-            // make robot hurdle of the walls if they are in the way
+                
+            // make robot jump hurdle of the walls if they are in the way
             }else
             {
+                // turn left to face North
                 karel.turnLeft();
+                
+                // move up/north
                 karel.move();
+                
+                // No turnRight, hence turn left 3 times to face East
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.turnLeft();
+                
+                // move East
                 karel.move();
+                
+                // face South
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.turnLeft();
+                
+                // move South
                 karel.move();
+                
+                // face East
                 karel.turnLeft();
             }
-
         }
     }
 }

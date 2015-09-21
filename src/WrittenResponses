@@ -13,8 +13,8 @@ Written Responses:
 
 2. These two statements behave the same but are coded differently
 because every line of code is the opposite of the other. For example in 
-statement one, the code was written to say if karel can pick up  the thing than 
+statement one, the code was written to say if karel can pick up  the thing then 
 he will turn right or if he can't pick up the thing than he will turn left. 
 Whereas in statement two, the code was written to say if karel can't pick up 
 thing than he will turn left or if he can pick up the thing than he will turn 
-left. Therefore in the robot will operate in the same way.
+left. Therefore the robot will operate in the same way.
