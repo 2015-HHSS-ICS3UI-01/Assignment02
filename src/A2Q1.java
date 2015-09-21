@@ -8,7 +8,6 @@ import becker.robots.Thing;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author iorgs3184
@@ -19,11 +18,11 @@ public class A2Q1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         City kw = new City();
-        
+
         Robot karel = new Robot(kw, 1, 1, Direction.EAST);
-        
+
         new Thing(kw, 1, 2);
         new Thing(kw, 1, 3);
         new Thing(kw, 1, 4);
@@ -34,28 +33,24 @@ public class A2Q1 {
         new Thing(kw, 1, 9);
         new Thing(kw, 1, 10);
         new Thing(kw, 1, 11);
-        
-        
-        while(karel.getAvenue() <= 11)
-        {
-            if(karel.frontIsClear())
-        {
-            karel.move();
-        }    
-        
-            if(karel.canPickThing())
-        {
-            karel.pickThing();
-        }    
-        
-            if(karel.countThingsInBackpack() == 7)
-        {
-            karel.move();
-            karel.move();
-            karel.move();
-            karel.move();
-        }      
-       
-      }
-   }
+
+
+        while (karel.getAvenue() <= 11) {
+            if (karel.frontIsClear()) {
+                karel.move();
+            }
+
+            if (karel.canPickThing()) {
+                karel.pickThing();
+            }
+
+            if (karel.countThingsInBackpack() == 7) {
+                karel.move();
+                karel.move();
+                karel.move();
+                karel.move();
+            }
+
+        }
+    }
 }
