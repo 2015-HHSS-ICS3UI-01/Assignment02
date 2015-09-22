@@ -21,8 +21,10 @@ public class A2Q5 {
      */
     public static void main(String[] args) {
 
+        //City for Robot to live in
         City kw = new City();
 
+        //New walls
         new Wall(kw, 0, 1, Direction.WEST);
         new Wall(kw, 1, 1, Direction.WEST);
         new Wall(kw, 2, 1, Direction.WEST);
@@ -79,6 +81,7 @@ public class A2Q5 {
         new Wall(kw, 9, 3, Direction.EAST);
         new Wall(kw, 9, 3, Direction.SOUTH);
 
+        //Things(snow) for robot to pick up
         new Thing(kw, 0, 2);
         new Thing(kw, 1, 1);
         new Thing(kw, 2, 1);
@@ -123,35 +126,45 @@ public class A2Q5 {
         new Thing(kw, 9, 5);
         new Thing(kw, 9, 7);
 
+        //Robots lo live in City
         Robot karel = new Robot(kw, 0, 3, Direction.SOUTH);
         Robot tina = new Robot(kw, 0, 3, Direction.SOUTH);
 
+        //karel starts to shovel snow
         while (karel.frontIsClear()) {
+           //karel picks up things(snow) only from driveway 
             while (karel.isBesideThing(IPredicate.aWall)) {
                 if (karel.canPickThing()) {
                     karel.pickThing();
                 }
+                //karel moves if front is clear
                 if (karel.frontIsClear()) {
                     karel.move();
-                } else {
+                }
+                //if he can't then he turns around
+                else {
                     karel.turnLeft();
                     karel.turnLeft();
                     karel.turnLeft();
                 }
             }
+            //karel turns left if he isnt beside a wall
             if (!karel.isBesideThing(IPredicate.aWall)) {
                 karel.turnLeft();
                 karel.move();
             }
         }
+        //karel puts thing(snow) at end
         karel.putThing();
 
+        //tina moves if front is clear
         while (tina.frontIsClear()) {
             tina.move();
-
+            //tina picks up things(snow) from side walk
             if (tina.canPickThing()) {
                 tina.pickThing();
             }
+            //tina drops off things(snow) if front isn't clear
             if (!tina.frontIsClear()) {
                 tina.putThing();
             }

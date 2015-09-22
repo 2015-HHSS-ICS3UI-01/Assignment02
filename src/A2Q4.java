@@ -20,8 +20,10 @@ public class A2Q4 {
      */
     public static void main(String[] args) {
 
+        //City for Robot to live in
         City kw = new City();
 
+        //new walls for Robot to go around
         new Wall(kw, 1, 1, Direction.NORTH);
         new Wall(kw, 1, 1, Direction.EAST);
         new Wall(kw, 1, 1, Direction.SOUTH);
@@ -47,21 +49,27 @@ public class A2Q4 {
         new Wall(kw, 3, 3, Direction.EAST);
         new Wall(kw, 3, 3, Direction.SOUTH);
 
+        //new Robot to live in City
         Robot karel = new Robot(kw, 0, 1, Direction.EAST);
 
+        //Robot starts to go around castle walls 
         while (karel.getStreet() >= 0) {
+            //Robot turns around wall
             if (!karel.isBesideThing(IPredicate.aWall)) {
                 karel.move();
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.turnLeft();
             }
+            //robot moves forward if front is clear
             if (karel.frontIsClear()) {
                 karel.move();
             }
+            //robot turns left if front isn't clear
             if (!karel.frontIsClear()) {
                 karel.turnLeft();
             }
+            //Robot moves if front is clear
             while (karel.frontIsClear()) {
                 karel.move();
             }
@@ -72,6 +80,7 @@ public class A2Q4 {
                 karel.turnLeft();
                 karel.turnLeft();
             }
+            //Robot goes around wall if front isn't clear
             if (karel.frontIsClear()) {
                 karel.move();
                 karel.move();

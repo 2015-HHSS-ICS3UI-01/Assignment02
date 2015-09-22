@@ -44,11 +44,14 @@ public class A2Q2 {
         //Robot that does the race
         Robot karel = new Robot(kw, 2, 2, Direction.EAST);
 
-        
+        //Robot starts Race
         while (karel.getStreet() == 2) {
+            //Robot moves if front is clear
             if (karel.frontIsClear()) {
                 karel.move();
-            } else if (!karel.frontIsClear()) {
+            } 
+            //if front isn't clear then Robot Hurdles
+            else if (!karel.frontIsClear()) {
                 karel.turnLeft();
                 karel.move();
                 karel.turnLeft();
@@ -61,7 +64,7 @@ public class A2Q2 {
                 karel.move();
                 karel.turnLeft();
             }
-
+            //if Robot reaches thing (finish line) then it stops
             if (karel.canPickThing()) {
                 break;
             }
