@@ -132,7 +132,7 @@ public class ProgrammingExercise5 {
         // move karel from street 0 to street 9, clean each street of snow
         while(karel.getStreet() != 9)
         {
-            // Turn left to allow Karel to examine the street or avenue 
+            // turn left to allow karel to examine the street or avenue 
             // to his left, if it's clear then move in that direction
             // if not then move forward and repeat
             karel.turnLeft();
@@ -152,7 +152,7 @@ public class ProgrammingExercise5 {
                 karel.turnLeft();
             }
              
-            // make karel drop the snow in his back pack if he is on the sidewalk (avenue 2), 
+            // make karel drop the snow in his back pack if he is on the sidewalk (avenue 2) 
             // otherwise if on driveway, then pick up the snow and put it in his backpack
             if(karel.getAvenue() == 2 && karel.countThingsInBackpack() > 0)
             {

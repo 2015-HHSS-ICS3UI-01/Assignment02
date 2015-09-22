@@ -54,9 +54,9 @@ public class ProgrammingExercise4 {
         // make robot move along each side of the castle in a loop
         while( karel.frontIsClear() )
         {   
-            // The outer edge of castle forms a pattern of movements hence we can follow the wall
+            // the outer edge of castle forms a pattern of movements hence we can follow the wall
             // using a repeated pattern and apply the same pattern for each side.
-            // Move guard along outer perimeter of one side of the castle.
+            // move guard along outer perimeter of one side of the castle.
             karel.move();
             karel.move();
             karel.turnLeft();
@@ -73,7 +73,7 @@ public class ProgrammingExercise4 {
             karel.move();
             karel.move();
             
-            // Turn the guard to face parallel to next wall
+            // turn the guard to face parallel to next wall
             karel.turnLeft();
             karel.turnLeft();
             karel.turnLeft();

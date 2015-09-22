@@ -55,29 +55,29 @@ public class ProgrammingExercise2 {
             // make robot jump hurdle of the walls if they are in the way
             }else
             {
-                // turn left to face North
+                // turn left to face north
                 karel.turnLeft();
                 
                 // move up/north
                 karel.move();
                 
-                // No turnRight, hence turn left 3 times to face East
+                // turn left 3 times to face east
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.turnLeft();
                 
-                // move East
+                // move east
                 karel.move();
                 
-                // face South
+                // face south
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.turnLeft();
                 
-                // move South
+                // move south
                 karel.move();
                 
-                // face East
+                // face east
                 karel.turnLeft();
             }
         }

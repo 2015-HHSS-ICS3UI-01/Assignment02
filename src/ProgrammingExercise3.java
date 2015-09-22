@@ -24,22 +24,22 @@ public class ProgrammingExercise3 {
         // make robot to live in city
         Robot karel = new Robot (kw, 8, 8, Direction.EAST);
 
-        // Move karel along the street until he reaches Avenue 0
+        // move karel along the street until he reaches avenue 0
         while(karel.getAvenue() != 0 )
         {
-            // Point karel West based on his current direction
-            // if he is pointed North, turn him West
+            // point karel west based on his current direction
+            // if he is pointed north, turn him west
             if(karel.getDirection() == Direction.NORTH)
             {
                 karel.turnLeft();
             
-            // if he is pointed East, turn him West
+            // if he is pointed east, turn him west
             } else if(karel.getDirection() == Direction.EAST)
             {
                 karel.turnLeft();
                 karel.turnLeft();
 
-            // if he is pointed South, turn him West
+            // if he is pointed south, turn him west
             }else if(karel.getDirection() == Direction.SOUTH)
             {
                 karel.turnLeft();
@@ -47,25 +47,25 @@ public class ProgrammingExercise3 {
                 karel.turnLeft();
             }
         
-            // karel is pointing West toward 0 Street, move him West
+            // karel is pointing West toward 0 street, move him west
             karel.move();
         }
         
         // make karel move along the avenue until he reaches 0 street
         while(karel.getStreet() != 0 )
         {
-            // point karel North based on his current direction
+            // point karel north based on his current direction
             if(karel.getDirection() == Direction.EAST)
             {
                 karel.turnLeft();
 
-            // if he is pointing South, turn him North
+            // if he is pointing south, turn him north
             }else if(karel.getDirection() == Direction.SOUTH)
             {
                 karel.turnLeft();
                 karel.turnLeft();
 
-            // pointing West, turn him North
+            // pointing west, turn him north
             }else if(karel.getDirection() == Direction.WEST)
             {
                 karel.turnLeft();
@@ -73,7 +73,7 @@ public class ProgrammingExercise3 {
                 karel.turnLeft();
             } 
 
-            // karel is pointing North toward 0 Street, move him North
+            // karel is pointing north toward 0 street, move him north
             karel.move();
         }
     }
