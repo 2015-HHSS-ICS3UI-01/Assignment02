@@ -1,6 +1,7 @@
 
 import becker.robots.City;
 import becker.robots.Direction;
+import becker.robots.Robot;
 import becker.robots.Thing;
 import becker.robots.Wall;
 
@@ -160,6 +161,35 @@ public class A2Q5 {
         new Thing(A2Q5, 0, 6);
         
         new Thing(A2Q5, 1, 7);
+        
+        //MAKE ROBOTS
+        Robot karel = new Robot(A2Q5, 0, 2, Direction.SOUTH);
+        Robot Tina = new Robot(A2Q5, 0, 2, Direction.SOUTH);
+        
+        //MAKE ROBOTS CLEAN SNOW
+        while( true ){
+            karel.turnLeft();
+            if( !karel.frontIsClear() ){ //CODE IS GOOD FROM HERE
+                karel.turnLeft();
+                karel.turnLeft();  //TO HERE
+            }else{
+                karel.move();
+                karel.turnLeft();
+                while( karel.canPickThing() ){
+                    karel.pickThing();
+                    karel.move();
+                if( !karel.frontIsClear() ){
+                karel.turnLeft(); //Right turn
+                karel.turnLeft();
+                karel.turnLeft();
+                }
+                }
+                }      
+               
+            }
+        
+        
+        
         
         
         
