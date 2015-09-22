@@ -12,7 +12,6 @@ import java.awt.geom.GeneralPath;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author whitb0039
@@ -24,18 +23,18 @@ public class TEST {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+
         City kw = new City();
-        
+
         //AnimatedIcon$a(double d, double d1, double d2, double d3, double d4, Color color)
-        
-        
+
+
         //makre new test robot
         RobotRC test = new RobotRC(kw, 1, 1, Direction.NORTH);
-        
-        
-        
-         // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+
+
+
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
         /* 0: iload_1
          * 1: bipush        109
          * 3: if_icmpeq     12
@@ -83,9 +82,9 @@ public class TEST {
          * 84: return
          *  */
         // </editor-fold>
-        
-        
-        
-        
+
+
+
+
     }
 }

@@ -2,6 +2,7 @@
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.Robot;
+import becker.robots.RobotSE;
 import becker.robots.Thing;
 import becker.robots.Wall;
 
@@ -25,8 +26,8 @@ public class A2Q5 {
         City kw = new City();
 
         //make new robot
-        Robot karel = new Robot(kw, 0, 2, Direction.SOUTH);
-        Robot tina = new Robot(kw, 0, 2, Direction.SOUTH);
+        RobotSE karel = new RobotSE(kw, 0, 2, Direction.SOUTH);
+        RobotSE tina = new RobotSE(kw, 0, 2, Direction.SOUTH);
 
         //make new walls
         new Wall(kw, 0, 0, Direction.WEST);
@@ -84,7 +85,6 @@ public class A2Q5 {
         new Wall(kw, 8, 5, Direction.SOUTH);
         new Wall(kw, 8, 4, Direction.SOUTH);
         new Wall(kw, 8, 3, Direction.SOUTH);
-
         //make new things
         new Thing(kw, 0, 1);
         new Thing(kw, 1, 0);
@@ -131,150 +131,62 @@ public class A2Q5 {
         new Thing(kw, 7, 7);
 
         karel.move();
+        karel.turnLeft();
+        while (karel.frontIsClear()) {
+            karel.move();
 
-        karel.turnLeft();
+            while (karel.frontIsClear()) {
+                if (karel.canPickThing()) {
+                    karel.pickThing();
+                }
+                karel.move();
+                if (karel.canPickThing()) {
+                    karel.pickThing();
+                }
+            }
+            karel.turnRight();
+            if (karel.canPickThing()) {
+                karel.pickThing();
+            }
+            while (karel.frontIsClear()) {
+                karel.move();
 
-        if (karel.frontIsClear()) {
-            karel.move();
-        }
-        while (karel.frontIsClear()) {
-            if (karel.canPickThing()) {
-                karel.pickThing();
+                if (karel.canPickThing()) {
+                    karel.pickThing();
+                }
             }
-            karel.move();
-        }
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.turnLeft();
-        if (karel.canPickThing()) {
-            karel.pickThing();
-        }
-        while (karel.frontIsClear()) {
-            karel.move();
-        }
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.turnLeft();
-        if (karel.canPickThing()) {
-            karel.pickThing();
-        }
-        while (karel.frontIsClear()) {
-            if (karel.canPickThing()) {
-                karel.pickThing();
-            }
-            karel.move();
-        }
-        karel.putThing();
+            karel.turnRight();
+            while (karel.frontIsClear()) {
+                karel.move();
 
-        karel.turnLeft();
-        karel.move();
-        karel.turnLeft();
-        if (karel.frontIsClear()) {
-            karel.move();
-        }
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.move();
-        karel.turnLeft();
-        if (karel.frontIsClear()) {
-            karel.move();
-        }
-        while (karel.frontIsClear()) {
-            if (karel.canPickThing()) {
-                karel.pickThing();
+                if (karel.canPickThing()) {
+                    karel.pickThing();
+                }
             }
-            karel.move();
-        }
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.turnLeft();
-        if (karel.canPickThing()) {
-            karel.pickThing();
-        }
-        while (karel.frontIsClear()) {
-            karel.move();
-        }
-        
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.turnLeft();
-        if (karel.canPickThing()) {
-            karel.pickThing();
-        }
-        while (karel.frontIsClear()) {
-            if (karel.canPickThing()) {
-                karel.pickThing();
+            karel.putAllThings();
+            karel.turnLeft();
+            if (karel.frontIsClear()){
+                karel.move();
             }
-            karel.move();
-        }
-        karel.putThing();
-        karel.turnLeft();
-        if (karel.frontIsClear()) {
-            karel.move();
-        }
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.turnLeft();
-        if (karel.frontIsClear()) {
-            karel.move();
-        }
-        karel.turnLeft();
-        if (karel.frontIsClear()) {
-            karel.move();
+            karel.turnLeft();
+            while (!karel.frontIsClear()) {
+                karel.turnRight();
+                if (!karel.frontIsClear()){
+                    break;
+                }
+                karel.move();
+                karel.turnLeft();
+            }
+
         }
 
-        
-        karel.move();
-        karel.turnLeft();
-        if (karel.frontIsClear()) {
-            karel.move();
-        }
-
-        while (karel.frontIsClear()) {
-            if (karel.canPickThing()) {
-                karel.pickThing();
-            }
-            karel.move();
-        }
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.turnLeft();
-        if (karel.canPickThing()) {
-            karel.pickThing();
-        }
-        while (karel.frontIsClear()) {
-            karel.move();
-        }
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.turnLeft();
-        if (karel.canPickThing()) {
-            karel.pickThing();
-        }
-        while (karel.frontIsClear()) {
-            if (karel.canPickThing()) {
-                karel.pickThing();
-            }
-            karel.move();
-        }
-        karel.putThing();
-        karel.turnLeft();
-        
-        while (karel.frontIsClear()) {
-            karel.move();
-        }
 
         while (tina.frontIsClear()) {
             tina.move();
             if (tina.canPickThing()) {
-                tina.pickThing();
-            }
-            if (tina.canPickThing()) {
-                tina.pickThing();
+                tina.pickAllThings();
             }
         }
         tina.putThing();
-
     }
 }
