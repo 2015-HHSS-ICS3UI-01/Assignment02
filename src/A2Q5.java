@@ -163,8 +163,8 @@ public class A2Q5 {
             while(tina.frontIsClear()){
                 tina.move();
                 while(tina.canPickThing())
-                    tina.pickThing();
+                    tina.pickThing();         
             }
-
+               tina.putThing();
     }
 }
