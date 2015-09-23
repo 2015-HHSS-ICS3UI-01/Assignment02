@@ -175,7 +175,7 @@ public class ProgrammingExercise5 {
             if(tina.canPickThing())
             {
             tina.pickThing();
-            //if not make tina move forward
+            // if not make tina move forward
             }else
             {
                 tina.move();

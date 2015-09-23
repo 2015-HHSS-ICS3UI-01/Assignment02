@@ -47,11 +47,11 @@ public class ProgrammingExercise3 {
                 karel.turnLeft();
             }
         
-            // karel is pointing West toward 0 street, move him west
+            // karel is pointing west toward street 0, move him west
             karel.move();
         }
         
-        // make karel move along the avenue until he reaches 0 street
+        // make karel move along the avenue until he reaches street 0
         while(karel.getStreet() != 0 )
         {
             // point karel north based on his current direction
@@ -65,7 +65,7 @@ public class ProgrammingExercise3 {
                 karel.turnLeft();
                 karel.turnLeft();
 
-            // pointing west, turn him north
+            // if he is pointing west, turn him north
             }else if(karel.getDirection() == Direction.WEST)
             {
                 karel.turnLeft();
@@ -73,7 +73,7 @@ public class ProgrammingExercise3 {
                 karel.turnLeft();
             } 
 
-            // karel is pointing north toward 0 street, move him north
+            // if he is pointing north toward street 0, move him north
             karel.move();
         }
     }

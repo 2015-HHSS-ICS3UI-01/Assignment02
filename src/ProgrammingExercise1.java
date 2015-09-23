@@ -25,7 +25,7 @@ public class ProgrammingExercise1 {
         // make robot to live in city, and position him at (1,1) facing East
         Robot karel = new Robot (kw, 1, 1, Direction.EAST);
         
-        //make things for robot to pick up
+        // make things for robot to pick up
         new Thing(kw, 1, 2);
         new Thing(kw, 1, 3);
         new Thing(kw, 1, 4);
@@ -40,7 +40,7 @@ public class ProgrammingExercise1 {
         // make robot stop when he reaches avenue 12
         while(karel.getAvenue() < 12)
         {
-            // make robot pick up things untill his backpack is full
+            // make robot pick up things until his backpack is full
             if(karel.canPickThing() && karel.countThingsInBackpack() < 7)
             {
                 karel.pickThing();

@@ -26,10 +26,10 @@ public class ProgrammingExercise2 {
         // make robot to live in city
         Robot karel = new Robot (kw, 2, 1, Direction.EAST);
         
-        //make finish line using thing
+        // make finish line using thing
         new Thing (kw, 2, 9);
         
-        //make walls within city
+        // make walls within city
         new Wall (kw, 2, 1, Direction.SOUTH);
         new Wall (kw, 2, 2, Direction.SOUTH);
         new Wall (kw, 2, 3, Direction.SOUTH);

@@ -55,7 +55,7 @@ public class ProgrammingExercise4 {
         while( karel.frontIsClear() )
         {   
             // the outer edge of castle forms a pattern of movements hence we can follow the wall
-            // using a repeated pattern and apply the same pattern for each side.
+            // using a repeated pattern and apply the same pattern for each side
             // move guard along outer perimeter of one side of the castle.
             karel.move();
             karel.move();
