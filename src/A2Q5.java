@@ -113,14 +113,15 @@ public class A2Q5 {
         Robot ert = new Robot (eep, 0, 2, Direction.SOUTH);
         while (true){
             if (jimbo.frontIsClear()){
-            jimbo.move();
-            
-        }else if (!jimbo.frontIsClear()){
-            jimbo.turnLeft();
+                jimbo.turnLeft();
+                    if (jimbo.frontIsClear());
+                
+                
+            }
         
             }   
             
         
         
     }
-}}
+}
