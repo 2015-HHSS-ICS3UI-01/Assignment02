@@ -131,13 +131,16 @@ public class A2Q5 {
        new Thing(kw,8,8);
        new Thing(kw,10,8);
        
+       //beep will execute the following commands no matter what
        while(true){
-           //if beep is on the given location, he does the command below
+           
            
            
            
             beep.turnLeft();
             
+            //if beep's front isnt clear, he will 
+            //execute the following commands
              if(!beep.frontIsClear()){
             
             
@@ -145,16 +148,20 @@ public class A2Q5 {
                 beep.turnLeft();
                 beep.turnLeft();}
              
+             //if beep's front isnt clear, he will 
+            //execute the following commands
              if(!beep.frontIsClear()){
                  beep.turnLeft();
                 beep.turnLeft();
                 beep.turnLeft();
              }
              
+             //if beep's front is clear, he will 
+            //execute the following commands
             if(beep.frontIsClear()){ 
-     //if beep is facing the given direction, he does the following command
+     
         
-        //if beep's front is not clear, he executes the command below
+        
        
         
 //if beep's front is clear, he executes the command below
@@ -162,16 +169,18 @@ public class A2Q5 {
                beep.move();}
                 
             }
-               
+//if beep is standing on a thing, they will execute the following command
          if(beep.canPickThing()){
                beep.pickThing();}
          
+//if beep is on the given location, they will execute the following commands
          if(beep.getStreet()==5){
              if(beep.getAvenue()==3){
                  while(beep.countThingsInBackpack()>0){
                  beep.putThing();}
              }
          }
+         //if beep is on the given location, they will execute the following commands
          if(beep.getStreet()==7){
              if(beep.getAvenue()==3){
                  while(beep.countThingsInBackpack()>0){
@@ -179,6 +188,7 @@ public class A2Q5 {
                  
              }
          }
+         //if beep is on the given location, they will execute the following commands
          if(beep.getStreet()==11){
              if(beep.getAvenue()==3){
                  while(beep.countThingsInBackpack()>0){
@@ -186,6 +196,7 @@ public class A2Q5 {
                 
              }
          }
+         //if beep is on the given location, they will execute the following commands
          if(beep.getStreet()==12){
              //breaks the program out of the while loop
              break;
@@ -202,11 +213,13 @@ public class A2Q5 {
        while(true){
            tina.move();
            
-           //if tina can pick up a thing (is standing on it), she will execute the command below
+           //if tina can pick up a thing (is standing on it), 
+           //she will execute the command below
            while(tina.canPickThing()){
                tina.pickThing();
            }
-           //if tina is standing on this spot, she will execute the following command
+           //if tina is standing on this spot, 
+           //she will execute the following command
            if(tina.getStreet()==12){
                while(tina.countThingsInBackpack()>0){
                  tina.putThing();}
