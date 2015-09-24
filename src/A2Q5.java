@@ -133,21 +133,36 @@ public class A2Q5 {
        
        while(true){
            //if beep is on the given location, he does the command below
-           if(beep.getStreet()==4){
-               if(beep.getAvenue()==3){
-                   beep.turnLeft();
-               }
-           }
-         if(beep.getStreet()==7){
-             if(beep.getAvenue()==3){
+           
+           
+           
+            beep.turnLeft();
+            
+             if(!beep.frontIsClear()){
+            
+            
+            beep.turnLeft();
+                beep.turnLeft();
+                beep.turnLeft();}
+             
+             if(!beep.frontIsClear()){
                  beep.turnLeft();
+                beep.turnLeft();
+                beep.turnLeft();
              }
-         }  
-         if(beep.getStreet()==10){
-             if(beep.getAvenue()==3){
-                 beep.turnLeft();
-             }
-         }
+             
+            if(beep.frontIsClear()){ 
+     //if beep is facing the given direction, he does the following command
+        
+        //if beep's front is not clear, he executes the command below
+       
+        
+//if beep's front is clear, he executes the command below
+           if(beep.frontIsClear()){
+               beep.move();}
+                
+            }
+               
          if(beep.canPickThing()){
                beep.pickThing();}
          
@@ -177,24 +192,7 @@ public class A2Q5 {
          }  
            
         
-        //if beep is facing the given direction, he does the following command
-        if(beep.getDirection()==Direction.WEST){
-               if(!beep.frontIsClear()){
-                   beep.turnLeft();
-               }
-                   
-           }
-        //if beep's front is not clear, he executes the command below
-        if(!beep.frontIsClear()){
-            
-            
-            beep.turnLeft();
-                beep.turnLeft();
-                beep.turnLeft();}
-        
-//if beep's front is clear, he executes the command below
-           if(beep.frontIsClear()){
-               beep.move();}
+       
            
            
            
