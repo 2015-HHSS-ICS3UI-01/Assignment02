@@ -23,6 +23,7 @@ public class a2q4 {
         City a2q4= new City();
         //make robot 
         Robot lali= new Robot(a2q4,0,1,Direction.EAST);
+        //create all walls
         new Wall(a2q4,1,1,Direction.SOUTH);
         new Wall(a2q4,1,1,Direction.NORTH);
         new Wall(a2q4,1,1,Direction.EAST);
@@ -57,6 +58,26 @@ public class a2q4 {
         
         
         while(lali.frontIsClear()){
+            lali.move();
+            lali.turnLeft();
+            lali.turnLeft();
+            lali.turnLeft();
+            lali.move();
+            lali.turnLeft();
+            lali.move();
+            lali.turnLeft();
+            
+            lali.move();
+            lali.turnLeft();
+            lali.turnLeft();
+            lali.turnLeft();
+            lali.move();
+            lali.move();
+            lali.turnLeft();
+            lali.turnLeft();
+            lali.turnLeft();
+            lali.move();
+                  
             
      
     }
