@@ -141,7 +141,7 @@ public class Programming_Exercise_5 {
         Robot sara = new Robot(kw, 0, 2, Direction.SOUTH);
         //begin loop
 
-        if(matt.frontIsClear()){
+        if (matt.frontIsClear()) {
             matt.move();
         }
         while (true) {
@@ -150,7 +150,6 @@ public class Programming_Exercise_5 {
                 matt.move();
                 while (matt.canPickThing()) {
                     matt.pickThing();
-
 
                 }
             }
@@ -163,16 +162,39 @@ public class Programming_Exercise_5 {
             }
             if (!matt.frontIsClear()) {
                 while (true) {
-                    matt.putThing();
+
                     if (matt.countThingsInBackpack() == 0) {
                         matt.turnLeft();
                         matt.move();
                         break;
+                    } else {
+                        matt.putThing();
+
                     }
+                }
+                if (!matt.frontIsClear()) {
+                    break;
                 }
 
             }
 
+        }
+        while (true) {
+            if (sara.frontIsClear()) {
+                sara.move();
+                while (sara.canPickThing()) {
+                    sara.pickThing();
+
+                }
+
+            }else{
+                while(true){
+                    sara.putThing();
+                    if(sara.countThingsInBackpack() == 0){
+                        break;
+                    }
+                }
+            }
         }
     }
 }
