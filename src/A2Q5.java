@@ -162,52 +162,24 @@ public class A2Q5 {
         new Thing(A2Q5, 1, 7);
 
         //MAKE ROBOTS
-        Robot karel = new Robot(A2Q5, 0, 2, Direction.SOUTH);
+        Robot karel = new Robot(A2Q5, 6, 2, Direction.SOUTH);
         Robot Tina = new Robot(A2Q5, 0, 2, Direction.SOUTH);
 
         //MAKE ROBOTS CLEAN SNOW
-        while (true) {
+        karel.turnLeft();
+        if (!karel.frontIsClear()) {
+            karel.turnLeft(); //Right turn
             karel.turnLeft();
-            if (!karel.frontIsClear()) { //CODE IS GOOD FROM HERE
-                karel.turnLeft();
-                karel.turnLeft();
-                karel.turnLeft(); //TO HERE
-                karel.move();
-//Turn left and check if there is a wall, if there is a wall, karel turns right and moves one space
-//This skips over the else section of code, and rechecks if his left side is clear
-            } else {
-                while (true) {
-                    if (karel.canPickThing()) {
-                        karel.pickThing();
-                        karel.move();
-                        if (!karel.frontIsClear()) {
-                            karel.turnLeft(); //Right turn
-                            karel.turnLeft();
-                            karel.turnLeft();
-                            if (karel.frontIsClear()) {
-                                karel.move();
-                                karel.turnLeft();
-                                karel.turnLeft();
-                                karel.turnLeft();
-                            } else {
-                                karel.turnLeft(); //Right turn
-                                karel.turnLeft();
-                                karel.turnLeft();
-                                while (karel.frontIsClear()) {
-                                    karel.move();
-                                }
-                            }
-                            karel.turnLeft();
-                            karel.move();
-                        }
-                    }
-                }
-//if karels left side is clear, it will skip over the first !karel.frontisclear and go to else, which checks if he can pick something up.
-//If karel can pick something up, he will pick thing and move as long as this is true.
-//If karel reaches the end of the driveway, he will turn right and check if it is clear
-//if the right is clear, karel will move and turn right.
-//if his front is not clear, he will turn to face east and move until he reaches the sidewalk
-            }
+            karel.turnLeft();
+            karel.move();
+            karel.turnLeft();
         }
+
+
+
+
+
+
+
     }
 }
