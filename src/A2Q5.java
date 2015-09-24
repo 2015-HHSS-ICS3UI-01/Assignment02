@@ -2,6 +2,7 @@
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.Robot;
+import becker.robots.Thing;
 import becker.robots.Wall;
 
 /*
@@ -61,10 +62,65 @@ public class A2Q5 {
         new Wall (eep, 1, 6, Direction.NORTH);
         new Wall (eep, 1, 6, Direction.EAST);
         new Wall (eep, 2, 6, Direction.EAST);
+        new Wall (eep, 2, 6, Direction.SOUTH);
+        new Wall (eep, 2, 5, Direction.SOUTH);
+        new Wall (eep, 2, 4, Direction.SOUTH);
+        new Wall (eep, 2, 3, Direction.SOUTH);
+        
+        new Wall (eep, 4, 3, Direction.NORTH);
+        new Wall (eep, 4, 4, Direction.NORTH);
+        new Wall (eep, 4, 5, Direction.NORTH);
+        new Wall (eep, 4, 5, Direction.EAST);
+        new Wall (eep, 4, 5, Direction.SOUTH);
+        new Wall (eep, 4, 4, Direction.SOUTH);
+        new Wall (eep, 4, 3, Direction.SOUTH);
+        
+        new Wall (eep, 7, 3, Direction.NORTH);
+        new Wall (eep, 7, 4, Direction.NORTH);
+        new Wall (eep, 7, 5, Direction.NORTH);
+        new Wall (eep, 7, 6, Direction.NORTH);
+        new Wall (eep, 7, 7, Direction.NORTH);
+        new Wall (eep, 7, 7, Direction.EAST);
+        new Wall (eep, 8, 7, Direction.EAST);
+        new Wall (eep, 8, 7, Direction.SOUTH);
+        new Wall (eep, 8, 6, Direction.SOUTH);
+        new Wall (eep, 8, 5, Direction.SOUTH);
+        new Wall (eep, 8, 4, Direction.SOUTH);
+        new Wall (eep, 8, 3, Direction.SOUTH);
+        
+        //make snow
+        new Thing (eep, 1, 2);
+        new Thing (eep, 1, 3);
+        new Thing (eep, 1, 4);
+        new Thing (eep, 1, 5);
+        new Thing (eep, 2, 6);
+        new Thing (eep, 2, 4);
+        new Thing (eep, 2, 2);
+        new Thing (eep, 4, 2);
+        new Thing (eep, 4, 3);
+        new Thing (eep, 4, 4);
+        new Thing (eep, 7, 2);
+        new Thing (eep, 7, 3);
+        new Thing (eep, 7, 7);
+        new Thing (eep, 8, 3);
+        new Thing (eep, 8, 4);
+        new Thing (eep, 8, 6);
         
         
-        //make robot
+        //make robots
+        Robot jimbo = new Robot (eep, 0, 2, Direction.SOUTH);
+        
+        Robot ert = new Robot (eep, 0, 2, Direction.SOUTH);
+        while (true){
+            if (jimbo.frontIsClear()){
+            jimbo.move();
+            
+        }else if (!jimbo.frontIsClear()){
+            jimbo.turnLeft();
+        
+            }   
+            
         
         
     }
-}
+}}
