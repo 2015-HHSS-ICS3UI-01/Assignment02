@@ -173,25 +173,6 @@ public class A2Q5 {
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.move();
-            } else {
-                break;
-            }
-        }
-        while (true) {
-            if (karel.canPickThing()) {
-                karel.pickThing();
-                if (karel.frontIsClear()) {
-                    karel.move();
-                    if (!karel.frontIsClear()) {
-                        karel.turnLeft();
-                        karel.turnLeft();
-                        while (karel.frontIsClear()) {
-                            karel.move();
-                        }
-                        karel.turnLeft();
-                        karel.move();
-                    }
-                }
             }
         }
     }
