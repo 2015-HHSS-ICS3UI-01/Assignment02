@@ -163,16 +163,44 @@ public class A2Q5 {
 
         //MAKE ROBOTS
         Robot karel = new Robot(A2Q5, 0, 2, Direction.SOUTH);
-        Robot Tina = new Robot(A2Q5, 0, 2, Direction.SOUTH);
+        Robot tina = new Robot(A2Q5, 0, 2, Direction.SOUTH);
 
         //MAKE ROBOTS CLEAN SNOW
-        while (true) {
+        //Karels commands
+        while (karel.frontIsClear()) {
             karel.turnLeft();
-            if (!karel.frontIsClear()) {
+            if (karel.frontIsClear()) {
+                //Clean Driveway
+                while (karel.frontIsClear()) {
+                    karel.move();
+                    if (karel.canPickThing()) {
+                        karel.pickThing();
+                    }
+                }
+                karel.turnLeft(); //turn Around
+                karel.turnLeft();
+                while (karel.frontIsClear()) { //Go back
+                    karel.move();
+                }
+                while (karel.countThingsInBackpack() > 0) {
+                    karel.putThing();
+                }
+                karel.turnLeft();
+                karel.move();
+            } else {
                 karel.turnLeft(); //Right turn
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.move();
+            }
+        }
+        //Tinas Commands
+        if (tina.frontIsClear()) {
+            while (tina.frontIsClear()) {
+                tina.move();
+                while (tina.canPickThing()) {
+                    tina.pickThing();
+                }
             }
         }
     }
