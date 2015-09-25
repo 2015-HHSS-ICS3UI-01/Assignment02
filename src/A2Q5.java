@@ -156,19 +156,13 @@ public class A2Q5 {
                 beep.turnLeft();
              }
              
-             //if beep's front is clear, he will 
-            //execute the following commands
-            if(beep.frontIsClear()){ 
-     
-        
-        
-       
+         
         
 //if beep's front is clear, he executes the command below
            if(beep.frontIsClear()){
                beep.move();}
                 
-            }
+            
 //if beep is standing on a thing, they will execute the following command
          if(beep.canPickThing()){
                beep.pickThing();}
