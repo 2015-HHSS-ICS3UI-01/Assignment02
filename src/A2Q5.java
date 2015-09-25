@@ -111,17 +111,44 @@ public class A2Q5 {
         Robot jimbo = new Robot (eep, 0, 2, Direction.SOUTH);
         
         Robot ert = new Robot (eep, 0, 2, Direction.SOUTH);
-        while (true){
-            if (jimbo.frontIsClear()){
+        while (jimbo.frontIsClear()){
                 jimbo.turnLeft();
-                    if (jimbo.frontIsClear());
+            if (jimbo.frontIsClear()){
+                    while (jimbo.frontIsClear()){
+                        jimbo.move();
+                            if (jimbo.canPickThing()){
+                                jimbo.pickThing();
+                            }else if (!jimbo.frontIsClear()){
+                                jimbo.turnLeft();
+                                jimbo.turnLeft();
+                                    while (jimbo.frontIsClear()){
+                                        jimbo.move();
+                                           
+                                            }
+                                    }
+      
+                            }
+        }else if (!jimbo.frontIsClear()){
+                jimbo.turnLeft();
+                jimbo.turnLeft();
+                jimbo.turnLeft();
+                jimbo.move();
                 
                 
-            }
-        
-            }   
+                
+                
+                
+                        
+                    
+            
+                         
+                            }
+     
+                    }
+            }}
+            
             
         
         
-    }
-}
+    
+
