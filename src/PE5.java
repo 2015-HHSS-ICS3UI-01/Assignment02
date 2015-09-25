@@ -129,24 +129,45 @@ public class PE5 {
         Robot tina = new Robot(kw, 0, 2, Direction.SOUTH);
 
         //Make robots pick up the snow 
-        while(true){
+        while (karel.frontIsClear()) {
             karel.turnLeft();
-        if (karel.frontIsClear()) {
-            while (karel.frontIsClear()) {
-                if (karel.canPickThing()) {
-                    karel.pickThing();
-                } else {
+            if (karel.frontIsClear()) {
+                while (karel.frontIsClear()) {
+                    karel.move();
+                    if (karel.canPickThing()) {
+                        karel.pickThing();
+                    }
+                }
+                karel.turnLeft();
+                karel.turnLeft();
+                while (karel.frontIsClear()) {
                     karel.move();
                 }
 
+                while (karel.countThingsInBackpack() > 0) {
+                    karel.putThing();
+                }
+                karel.turnLeft();
+                karel.move();
+            } else {
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.move();
             }
-        }else{
-            karel.turnLeft();
-            karel.turnLeft();
-            karel.turnLeft();
-            karel.move();
         }
+        while(true){
+            if(tina.canPickThing()){
+                tina.pickThing();
+            }else{
+                tina.move();
+            }
+            if(tina.frontIsClear()){
+                
+            }else{
+                break;
+            }
+               
         }
-        
     }
 }
