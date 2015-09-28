@@ -123,11 +123,12 @@ public class A2Q5 {
                                 jimbo.turnLeft();
                                     while (jimbo.frontIsClear()){
                                         jimbo.move();
-                                           
-                                            }
-                                    }
-      
-                            }
+                                           if (!jimbo.frontIsClear()){
+                                               jimbo.turnLeft();
+                 }
+              }
+           }
+      }
         }else if (!jimbo.frontIsClear()){
                 jimbo.turnLeft();
                 jimbo.turnLeft();
