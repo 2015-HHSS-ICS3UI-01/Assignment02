@@ -114,42 +114,49 @@ public class A2Q5 {
         while (jimbo.frontIsClear()){
                 jimbo.turnLeft();
             if (jimbo.frontIsClear()){
+                    //clear driveway
                     while (jimbo.frontIsClear()){
                         jimbo.move();
                             if (jimbo.canPickThing()){
                                 jimbo.pickThing();
+                    //go back
                             }else if (!jimbo.frontIsClear()){
                                 jimbo.turnLeft();
                                 jimbo.turnLeft();
-                                    while (jimbo.frontIsClear()){
+                                    if (jimbo.frontIsClear()){
                                         jimbo.move();
-                                           if (!jimbo.frontIsClear()){
-                                               jimbo.turnLeft();
-                 }
-              }
-           }
-      }
-        }else if (!jimbo.frontIsClear()){
+                                    }
+                                    else if (!jimbo.frontIsClear()){                                   
+                                        jimbo.putThing();
+                                        jimbo.turnLeft();
+                                        jimbo.move();
+                                        jimbo.turnLeft();
+                                    }
+                            }        
+                                    
+                            
+                 
+              
+           
+      
+                    }}else if (!jimbo.frontIsClear()){
                 jimbo.turnLeft();
                 jimbo.turnLeft();
                 jimbo.turnLeft();
                 jimbo.move();
-                
-                
-                
+    }           
+        }while (ert.frontIsClear()){
+                     ert.move();
+                        if (ert.canPickThing()){
+                            ert.pickThing();
+                        }else if (!ert.frontIsClear()){
+                            ert.putThing();
+                        }
+                 }   }}         
                 
                 
                         
                     
             
                          
-                            }
-     
-                    }
-            }}
-            
-            
-        
-        
-    
-
+                                              
