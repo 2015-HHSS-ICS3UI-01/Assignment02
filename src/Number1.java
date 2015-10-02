@@ -19,7 +19,7 @@ public class Number1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        City kw = new City();
+        City kw = new City(); 
         
         //New Robot
         Robot josh = new Robot(kw, 1, 0, Direction.EAST);
