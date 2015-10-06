@@ -160,7 +160,7 @@ public class A2Q5 {
                 // When karel has no snow to pick up he moves
             } else if (!karel.canPickThing() && (karel.getDirection() == Direction.WEST)) {
                 karel.move();
-
+                //Karel going through sidewalk
             } else if (karel.getDirection() == Direction.SOUTH && (karel.frontIsClear())) {
                 karel.move();
             } else if (karel.canPickThing() && (karel.getAvenue() == 3)) {
