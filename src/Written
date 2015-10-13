@@ -1,0 +1,11 @@
+1. a) true
+   b) true
+   c) true
+   d) true
+   e)false
+   f) true
+   g) false
+   h) true
+
+2. Both statements behave in the same way, they are just opposite. What makes the two opposite is the 
+'!' before 'karel.canpickThing()' in statement 2 which means 'not'.
