@@ -34,7 +34,7 @@ public class A2Q1 {
         while (kar.frontIsClear()) {
             kar.move();
             //make kar pick up 7 things while moving forward
-            while (true) { 
+            while (true) {
                 if (kar.countThingsInBackpack() < 7) {
                     kar.pickThing();
                     kar.move();

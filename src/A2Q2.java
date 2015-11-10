@@ -37,11 +37,11 @@ public class A2Q2 {
         new Thing(kw, 4, 7);
         //make code loop
         while (true) {
-        //let kar move forward if front is clear
+            //let kar move forward if front is clear
             while (kar.frontIsClear()) {
                 kar.move();
             }
-        //choose directions for kar
+            //choose directions for kar
             if (!kar.frontIsClear()) {
                 kar.turnLeft();
                 kar.move();
