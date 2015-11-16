@@ -125,8 +125,7 @@ public class A2Q5 {
                                 jimbo.turnLeft();
                                     if (jimbo.frontIsClear()){
                                         jimbo.move();
-                                    }
-                                    else if (!jimbo.frontIsClear()){                                   
+                                   }else if (!jimbo.frontIsClear()){                                   
                                         jimbo.putThing();
                                         jimbo.turnLeft();
                                         jimbo.move();
@@ -139,7 +138,7 @@ public class A2Q5 {
               
            
       
-                    }}else if (!jimbo.frontIsClear()){
+               }}else if (!jimbo.frontIsClear()){
                 jimbo.turnLeft();
                 jimbo.turnLeft();
                 jimbo.turnLeft();
